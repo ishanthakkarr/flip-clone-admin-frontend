@@ -91,7 +91,7 @@ const Products = (props) => {
           product.products.length > 0
             ? product.products.map((product) => (
                 <tr
-                  onClick={() => showProductDetailsModal(product)}
+                  // onClick={() => showProductDetailsModal(product)}
                   key={product._id}
                 >
                   <td>3</td>
@@ -126,8 +126,9 @@ const Products = (props) => {
     return (
       <Modal
         show={show}
-        handleClose={handleClose}
+        handleClose={() => setShow(false)}
         modalTitle={"Add New Product"}
+        onSubmit={handleClose}
       >
         <Input
           label="Name"
@@ -188,9 +189,10 @@ const Products = (props) => {
       return (
         <Modal
           show={productDetailModal}
-          handleClose={handleCloseProductDetailsModal}
+          handleClose={() => setProductDetailModal(false)}
           modalTitle={"Product Details"}
           size="lg"
+          onSubmit={handleCloseProductDetailsModal}
         >
           <Row>
             <Col md="6">
