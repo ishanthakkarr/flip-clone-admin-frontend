@@ -227,7 +227,7 @@ const Products = (props) => {
                 {productDetails.productPictures.map((picture) => (
                   <div className="productImgContainer">
                     {/* <img src={`${api}/public/${picture.img}`} */}
-                    <img src={generatePublicUrl(picture.img)} />
+                    <img src={picture.img} />
                   </div>
                 ))}
               </div>
